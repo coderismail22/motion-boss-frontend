@@ -135,7 +135,8 @@ const Orders = () => {
                             <th>Phone</th>
                             <th>Course</th>
                             <th>Payment Number</th>
-                            <th>Ammount</th>
+                            <th>Amount</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -149,6 +150,7 @@ const Orders = () => {
                                 <td>{pay?.course}</td>
                                 <td>{pay?.paymentNumber}</td>
                                 <td>{pay?.ammount}</td>
+                                <td>{pay?.approvedByAdmin ? "Approved" : "Pending"}</td>
                                 <td>
                                     <div className="dropdown dropdown-end  ">
                                         <div tabIndex={0} role="button" className="btn btn-sm m-1 text-[8px]">Edit</div>

@@ -59,7 +59,7 @@ const BkahPayment = () => {
                     console.log('Payment Placed Successfully');
                     Swal.fire({
                         title: "Payment Placed Successfully",
-                        text: "Waiting For Admin Apprubal",
+                        text: "Waiting For Admin Approval",
                         icon: "success",
                         timer: 2000
                     });
