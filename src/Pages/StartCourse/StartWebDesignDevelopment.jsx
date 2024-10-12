@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CiPlay1 } from "react-icons/ci";
 
-const StartCourseVideoEditing = () => {
+const StartWebDesignDevelopment = () => {
     const [selectedVideo, setSelectedVideo] = useState({
         title: 'motion title1',
         vid: 'VJsf81SuJEQ?si=cBBY37BT-gfdisKv',
@@ -84,4 +84,4 @@ const StartCourseVideoEditing = () => {
     );
 };
 
-export default StartCourseVideoEditing;
+export default StartWebDesignDevelopment;

@@ -22,9 +22,10 @@ import AdminHome from "../Pages/Dashboard/DasboardMenu/MenuDetails/AdminHome";
 import UserHome from "../Pages/Dashboard/DasboardMenu/MenuDetails/UserHome";
 import BkahPayment from "../Pages/Dashboard/DasboardMenu/Payment/BkahPayment";
 import Orders from "../Pages/Dashboard/DasboardMenu/MenuDetails/Orders";
-import StartCourseVideoEditing from "../Pages/StartCourse/StartCourseVideoEditing";
-import StartCourseMotionGraphics from "../Pages/StartCourse/StartCourseMotionGraphics";
 import About from "../Pages/About/About";
+import StartCourseMotionGraphics from "../Pages/StartCourse/StartCourseMotionGraphics";
+import StartCourseVideoEditing from "../Pages/StartCourse/StartCourseVideoEditing";
+import StartWebDesignDevelopment from "../Pages/StartCourse/StartWebDesignDevelopment";
 
 
 export const router = createBrowserRouter([
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: '/my-course/videoEditing',
         element: <PrivateRoute><StartCourseVideoEditing /></PrivateRoute>
+      },
+      {
+        path: '/my-course/webDesign',
+        element: <PrivateRoute><StartWebDesignDevelopment /></PrivateRoute>
       },
     ],
   },
