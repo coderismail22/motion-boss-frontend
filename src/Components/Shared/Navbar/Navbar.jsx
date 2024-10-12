@@ -13,12 +13,12 @@ const Navbar = () => {
     const [cart] = useCart()
     const [isAdmin] = useAdmin();
     console.log(user)
-
+    { console.log('navbar cart', cart) }
     const handleLogOut = () => {
         logOut()
             .then(() => {
                 Swal.fire({
-                    title: "Loout successfully",
+                    title: "Logged out successfully",
                     text: "See You Again",
                     icon: "success"
                 })

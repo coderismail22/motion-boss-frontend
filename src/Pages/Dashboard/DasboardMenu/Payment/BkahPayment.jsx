@@ -35,6 +35,7 @@ const BkahPayment = () => {
         const paymentTime = moment().tz("Asia/Dhaka").format(); // Generate current timestamp in Dhaka time zone
 
         const paymentInfo = {
+            cartId: cart[0]?._id,
             name: name,
             yourPhone: yourPhone,
             email: userEmail,
@@ -50,8 +51,9 @@ const BkahPayment = () => {
             approvedByAdmin: false,
         };
 
+        // console.log('cart yeah cart', cart)
+        console.log('payment yeah info', paymentInfo)
         axiosPublic.post('/paymentInfo', paymentInfo)
-
             .then(res => {
 
                 if (res.data.insertedId) {
@@ -64,7 +66,7 @@ const BkahPayment = () => {
                         timer: 2000
                     });
                     navigate('/profile/payment-history')
-
+                    refetch()
                 }
             })
             .catch(error => {
@@ -82,9 +84,9 @@ const BkahPayment = () => {
                 <div className="text-xl flex items-center gap-4">
                     <h3 className=" bg-gradient-to-r from-blue-500 to-cyan-500  text-transparent bg-clip-text  gap-4"> Payment </h3>
                     <div className="flex gap-4 justify-center ">
-                        <img className="w-10  h-7 border-2 rounded-full p-1" src={bkash} alt="" />
-                        <img className="w-10 h-7 border-2 rounded-full p-1" src={rocket} alt="" />
-                        <img className="w-9 h-8 border-2 rounded-full p-1" src={nagad} alt="" />
+                        <img className="w-10  h-7 border-2 rounded-full p-1" src={bkash} alt="bkash" />
+                        <img className="w-10 h-7 border-2 rounded-full p-1" src={rocket} alt="rocket" />
+                        <img className="w-9 h-8 border-2 rounded-full p-1" src={nagad} alt="nagad" />
                     </div>
                 </div>
                 <div><FiEdit className="text-blue-500" /></div>
