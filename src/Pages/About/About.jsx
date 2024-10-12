@@ -7,7 +7,7 @@ const About = () => {
         <div className="flex flex-col justify-center items-center ">
             <PageTitleWithImage
                 pageName={"Contact"}
-                bgImage={"/assets/contact-bg.jpg"}
+                bgImage={"/public/img/dot.png"}
             />
             <ContactCards />
             <Map />

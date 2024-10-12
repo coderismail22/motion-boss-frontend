@@ -5,7 +5,7 @@ import { FaMailBulk } from "react-icons/fa";
 
 const ContactCard = ({ icon, title, description }) => {
   return (
-    <div className="w-full h-full mx-auto max-w-[600px] flex flex-col items-center justify-between p-5 bg-blue-50 ">
+    <div className="rounded-md w-full h-full mx-auto max-w-[600px] flex flex-col items-center justify-between p-5 bg-blue-50 ">
       <div className="flex flex-col items-center gap-4">
         {icon == "office" ? (
           <FaBuilding className="size-10 text-[#4B8F0E]" />
