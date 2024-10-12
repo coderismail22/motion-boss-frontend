@@ -15,14 +15,28 @@ const CoursePageCard = ({ course }) => {
     const location = useLocation();
     const axiosPublic = useAxiosSecure()
     const { user } = useAuth()
-    const { courseId, courseName,start_course_name, categoryName, totalClasses, trainerImageUrl, trainerName, price, thumbnail_url } = course;
-    const [,refetch]= useCart()
-console.log(course)
+    const { courseId, courseName, start_course_name, categoryName, totalClasses, trainerImageUrl, trainerName, price, thumbnail_url } = course;
+    const [, refetch] = useCart()
+    console.log(course)
 
-    // problem start
     const handleAddToCart = () => {
         if (user && user.email) {
-            //send cart item to the database
+            // Custom logic for courseId 3
+            if (courseId === "3") {
+                Swal.fire({
+                    title: "Coming Soon!",
+                    text: "This course will be launching very soon. Stay tuned!",
+                    icon: "info",
+                    confirmButtonText: "OK"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        navigate('/'); // Redirect to a support page
+                    }
+                });
+                return; // Stop further execution for courseId 3
+            }
+
+            // Regular cart logic for other courses
             const cartItem = {
                 menuId: courseId,
                 email: user.email,
@@ -30,14 +44,15 @@ console.log(course)
                 thumbnail_url,
                 price,
                 start_course_name
-            }
+            };
+
             axiosPublic.post('/carts', cartItem)
                 .then(res => {
                     if (res.data.insertedId) {
                         console.log('User added to the database');
                         Swal.fire({
                             title: "Cart successfully added",
-                            text: "Buy now or vew more course!",
+                            text: "Buy now or view more courses!",
                             icon: "success",
                             showCancelButton: true,
                             confirmButtonColor: "#3085d6",
@@ -45,8 +60,7 @@ console.log(course)
                             confirmButtonText: "Pay Now!"
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                //   send the user to the login page
-                                navigate('/profile/my-cart')
+                                navigate('/profile/my-cart');
                             }
                         });
                         refetch();
@@ -60,8 +74,7 @@ console.log(course)
                         icon: "error"
                     });
                 });
-        }
-        else {
+        } else {
             Swal.fire({
                 title: "You are not Logged In",
                 text: "Please login to add to the cart?",
@@ -72,12 +85,12 @@ console.log(course)
                 confirmButtonText: "Yes, login!"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    //   send the user to the login page
-                    navigate('/login', { state: { from: location } })
+                    navigate('/login', { state: { from: location } });
                 }
             });
         }
-    }
+    };
+
     return (
         <div className=" mx-auto ">
             <div className="card card-compact  bg-base-100 shadow-xl">

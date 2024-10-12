@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axioxPublic = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://motion-boss-single-page-server.vercel.app'
 })
 const useAxiosPublic = () => {
     return axioxPublic;

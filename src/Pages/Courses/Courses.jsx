@@ -10,35 +10,35 @@ import { Helmet } from "react-helmet-async";
 
 const Courses = () => {
 
-    useEffect(()=>{
-        window.scrollTo(0,0);
-      },[])
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
-      
+
     const [tabIndex, setTabIndex] = useState(0)
     const [courses, getCourse] = useState([])
-    const [ loaing, setLoading] = useState(true)
+    const [loaing, setLoading] = useState(true)
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:5000/course')
+        fetch('https://motion-boss-single-page-server.vercel.app/course')
             .then(res => res.json())
             .then(data => {
                 getCourse(data)
             })
-            setLoading(false)
+        setLoading(false)
     }, [])
 
     const onlineCourse = courses.filter(online => online.categoryName === 'Online Live Course')
     const recordedCourse = courses.filter(online => online.categoryName === 'Pre Recorded Course')
 
-    if(loaing) return <Loader></Loader>;
+    if (loaing) return <Loader></Loader>;
     return (
         <div className="py-8 bg-gradient-to-l from-cyan-50 to-blue-100  pb-32 ">
             <Helmet>
                 <title>Motion Boss | Courses</title>
             </Helmet>
             <TopTite></TopTite>
-      
+
 
 
             <div>
@@ -58,7 +58,7 @@ const Courses = () => {
                     <TabPanel><div className='grid gap-6 grid-cols-1  md:grid-cols-2 lg:grid-cols-3  w-10/12 mx-auto'>
                         {recordedCourse.map(course => <CoursePageCard key={course.id} course={course}></CoursePageCard>)}
                     </div> </TabPanel>
-                
+
                 </Tabs>
             </div>
         </div>
