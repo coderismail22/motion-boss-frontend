@@ -1,9 +1,16 @@
-
+import PageTitleWithImage from "../../Components/PageTitleWithImage/PageTitleWithImage";
+import ContactCards from "./ContactCards/ContactCards";
+import Map from "./Map/Map";
 
 const About = () => {
     return (
-        <div>
-            about
+        <div className="flex flex-col justify-center items-center ">
+            <PageTitleWithImage
+                pageName={"Contact"}
+                bgImage={"/assets/contact-bg.jpg"}
+            />
+            <ContactCards />
+            <Map />
         </div>
     );
 };

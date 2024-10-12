@@ -24,6 +24,7 @@ import BkahPayment from "../Pages/Dashboard/DasboardMenu/Payment/BkahPayment";
 import Orders from "../Pages/Dashboard/DasboardMenu/MenuDetails/Orders";
 import StartCourseVideoEditing from "../Pages/StartCourse/StartCourseVideoEditing";
 import StartCourseMotionGraphics from "../Pages/StartCourse/StartCourseMotionGraphics";
+import About from "../Pages/About/About";
 
 
 export const router = createBrowserRouter([
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
       {
         path: "/course",
