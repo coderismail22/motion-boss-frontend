@@ -18,13 +18,50 @@ const Orders = () => {
             return res.data;
         }
     })
-    console.log("adminPaymentInfo:", adminPaymentInfo); 
+
+    console.log("adminPaymentInfo:", adminPaymentInfo);
 
 
-    const handleCourseConfirm = () =>{
-       
-
-    }
+    const handleCourseConfirm = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, confirm it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.patch(`/adminPaymentInfo/${id}`)
+                    .then(res => {
+                        console.log("Response from backend:", res);
+                        if (res.data.success) {
+                            refetch(); // Assuming refetch is a function to update UI after update
+                            Swal.fire({
+                                title: "Confirmed!",
+                                text: "Payment information has been approved.",
+                                icon: "success"
+                            });
+                        } else {
+                            Swal.fire({
+                                title: "Error!",
+                                text: res.data.message || "Failed to confirm payment information.",
+                                icon: "error"
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error confirming payment information:", error);
+                        Swal.fire({
+                            title: "Error!",
+                            text: "An error occurred while confirming payment information.",
+                            icon: "error"
+                        });
+                    });
+            }
+        });
+    };
 
 
 
@@ -70,7 +107,7 @@ const Orders = () => {
         });
     }
 
-    
+
 
 
 
@@ -116,12 +153,12 @@ const Orders = () => {
                                     <div className="dropdown dropdown-end  ">
                                         <div tabIndex={0} role="button" className="btn btn-sm m-1 text-[8px]">Edit</div>
                                         <ul tabIndex={0} className="dropdown-content text-[8px] z-[1] menu p-2 shadow bg-base-100  rounded-box w-24">
-                                            <li><button  onClick={handleCourseConfirm}>Confirmed</button></li>
+                                            <li><button onClick={() => handleCourseConfirm(pay._id)}>Confirmed</button></li>
                                             <li><button onClick={() => handleDeleteOrder(pay._id)} >Delete</button></li>
                                         </ul>
                                     </div>
                                 </td>
-                               
+
                             </tr>
                             )
                         }
