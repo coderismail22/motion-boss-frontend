@@ -71,6 +71,9 @@ const Navbar = () => {
                                     <Link to='/profile/my-cart'>
                                         <div className="indicator ">
                                             <IoMdNotificationsOutline className="text-2xl " />
+                                            {
+                                                console.log(cart?.length)
+                                            }
                                             <span className="badge badge-sm indicator-item p-2  bg-red-500 text-white">{cart.length}</span>
                                         </div></Link>
                                 </div>
@@ -83,7 +86,7 @@ const Navbar = () => {
                                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                         <li>
                                             <Link to='/profile/adminHome'>
-                                               Profile 
+                                                Profile
                                             </Link>
                                         </li>
                                         <li><Link>Settings</Link></li>

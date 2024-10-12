@@ -40,13 +40,14 @@ const BkahPayment = () => {
             email: userEmail,
             course: courseName,
             courseId: courseId,
-            startCourseId : startCourseName,
+            startCourseId: startCourseName,
             courseImg: img,
             mathode: select,
             paymentNumber: bkashNumber,
             ammount: ammount,
             tncId: tnxId,
-            paymentTime: paymentTime // Include payment time in payment information
+            paymentTime: paymentTime,// Include payment time in payment information
+            approvedByAdmin: false,
         };
 
         axiosPublic.post('/paymentInfo', paymentInfo)
