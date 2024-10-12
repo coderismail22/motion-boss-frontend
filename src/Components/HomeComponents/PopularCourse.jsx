@@ -14,7 +14,7 @@ const PopularCourse = () => {
     }, [])
     return (
         <div className="mb-8 mt-24">
-            <SectionTitle title={'জনপ্রিয় কোর্স সমূহ'} subtitle={'আমাদের সেরা করছে জয়েন হয়ে আজ শুরু করুন আপনার স্মার্ট ক্যারিয়ার'}></SectionTitle>
+            <SectionTitle title={'জনপ্রিয় কোর্স সমূহ'} subtitle={'আমাদের সেরা কোর্সে জয়েন হয়ে আজ শুরু করুন আপনার স্মার্ট ক্যারিয়ার'}></SectionTitle>
 
             <div className="grid gap-6 grid-cols-1  md:grid-cols-2 lg:grid-cols-3  w-10/12 mx-auto">
                 {
