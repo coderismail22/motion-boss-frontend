@@ -146,7 +146,7 @@ const BkahPayment = () => {
                         </div>
                     </div>
                 </form>
-                <div className="w-5/12">
+                <div className="w-5/12 mx-auto">
 
                     <div>
                         <p className="text-center mt-2">বিকাশ/ রকেট/ নগদ (পার্সোনাল)  </p>
@@ -158,9 +158,9 @@ const BkahPayment = () => {
                             টাকা পাঠানোর ১২ ঘন্টার ভিতরে আপনাকে কোর্স এপ্রোভাল দিয়ে দেওয়া হবে.
                         </p>
                         <div className="divider opacity-20 w-12/12 mx-auto divider-accent"></div>
-                        <div className="mt-16">
-                            <p>দ্রুত ইনফরমেশনের জন্য</p>
-                            <div className="flex gap-1 items-center font-semibold">
+                        <div className="mt-16 ">
+                            <p className="text-center">দ্রুত ইনফরমেশনের জন্য</p>
+                            <div className="flex gap-1 items-center justify-center font-semibold">
                                 <IoMdCall className="text-[#2196F3]" />
                                 <FaWhatsapp className="text-[#2AB13F]" />
                                 <p>01730481212</p>
