@@ -8,14 +8,14 @@ import { Helmet } from 'react-helmet-async';
 
 const CourseDetails = () => {
     const { start_course_name } = useParams()
-    useEffect(()=>{
-        window.scrollTo(0,0);
-      },[])
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
     const [course, setCourse] = useState({})
     const [loaing, setLoading] = useState(true)
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:5000/course')
+        fetch('https://motion-boss-single-page-server.vercel.app/course')
             .then(res => res.json())
             .then(data => {
                 const filterCourse = data.find(item => item.start_course_name === start_course_name)

@@ -6,12 +6,13 @@ import CourseCard from "../Shared/CourseCard/CourseCard";
 const PopularCourse = () => {
     const [courses, getCourse] = useState([])
     useEffect(() => {
-        fetch('/public/course.json')
+        fetch('/course.json')
             .then(res => res.json())
             .then(data => getCourse(data))
 
 
     }, [])
+    console.log('home courses', courses)
     return (
         <div className="mb-8 mt-24">
             <SectionTitle title={'জনপ্রিয় কোর্স সমূহ'} subtitle={'আমাদের সেরা কোর্সে জয়েন হয়ে আজ শুরু করুন আপনার স্মার্ট ক্যারিয়ার'}></SectionTitle>
