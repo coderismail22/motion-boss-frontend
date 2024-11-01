@@ -31,7 +31,7 @@ const Category = () => {
                     <div>
                        <Link to='/course'> <button className="btn m-1 flex justify-center  bg-gradient-to-r font-semibold text-[16px]">
                             <span className="text-xl "><IoBookOutline /></span>
-                            Vew Course</button></Link>
+                            View Course</button></Link>
                     </div>
                 </div>
                 

@@ -122,7 +122,7 @@ const CoursePageCard = ({ course }) => {
                     <div className="flex justify-between">
                         <div className="w-7/12">
                             <Link to={`/course/${start_course_name}`}>      <button className="btn text-white bg-gradient-to-r w-full font-semibold text-[16px] from-cyan-500 to-blue-500">
-                                <samp className='text-xl'><BiCategoryAlt /></samp> Vew Course Details</button></Link>
+                                <samp className='text-xl'><BiCategoryAlt /></samp> View Course Details</button></Link>
                         </div>
                         <div>
                             <button onClick={() => handleAddToCart(course)} className="btn btn-outline mx-5 btn-primary text-yellow-600"> <span><FiShoppingCart /></span>Add Cart</button>
