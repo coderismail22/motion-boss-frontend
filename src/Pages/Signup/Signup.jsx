@@ -1,6 +1,6 @@
 
 import { Link, useNavigate } from 'react-router-dom';
-import { imageUpload } from '../../Api/utilits';
+// import { imageUpload } from '../../Api/utilits';
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
@@ -40,7 +40,7 @@ const SignUp = () => {
                     console.log('User added to the database');
                     Swal.fire({
                         title: "Login successfully",
-                        text: "Welcome to Motion Boss",
+                        text: "Welcome to EJobsIT",
                         icon: "success",
                         timer: 2000
                     });
@@ -72,7 +72,7 @@ const SignUp = () => {
     return (
         <div className='flex justify-center items-center min-h-screen py-4 bg-base-100'>
             <Helmet>
-                <title>Motion Boss | Signup </title>
+                <title>EJobsIT | Signup </title>
             </Helmet>
             <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
                 <div className='mb-8 text-center'>

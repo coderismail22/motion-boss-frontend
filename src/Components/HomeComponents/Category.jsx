@@ -15,7 +15,7 @@ const Category = () => {
                     <span className="text-6xl mb-2 "><MdLiveTv className='text-purple-900' /></span>
                     <h3 className="text-2xl font-semibold">অনলাইন লাইভ কোর্স</h3>
                     <div>
-                       <Link to='/course'> <button className="btn m-1 flex justify-center  bg-gradient-to-r font-semibold text-[16px]">
+                        <Link to='/course'> <button className="btn m-1 flex justify-center  bg-gradient-to-r font-semibold text-[16px]">
                             <span className="text-xl "><IoBookOutline /></span>
                             View Course</button></Link>
                     </div>
@@ -29,12 +29,12 @@ const Category = () => {
                     </div>
                     <h3 className="text-2xl font-semibold">প্রী-রেকর্ডেড কোর্স</h3>
                     <div>
-                       <Link to='/course'> <button className="btn m-1 flex justify-center  bg-gradient-to-r font-semibold text-[16px]">
+                        <Link to='/course'> <button className="btn m-1 flex justify-center  bg-gradient-to-r font-semibold text-[16px]">
                             <span className="text-xl "><IoBookOutline /></span>
                             View Course</button></Link>
                     </div>
                 </div>
-                
+
                 <div className='mt-20 -pr-12'>
                     <a href="#slide2" className="btn btn-circle border-red-500 bg-white">❯</a>
                 </div>

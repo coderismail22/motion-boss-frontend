@@ -10,7 +10,7 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from || { pathname: "/" }; // Default to "/" if state is undefined
 
-    const { signIn } = useAuth(); 
+    const { signIn } = useAuth();
     const handleSignin = async event => {
         event.preventDefault();
         const form = event.target;
@@ -23,9 +23,9 @@ const Login = () => {
             console.log(user);
             Swal.fire({
                 title: "Login successfully",
-                text: "Welcome to Motion Boss",
+                text: "Welcome to EJobsIT",
                 icon: "success",
-                
+
                 timer: 2000
             });
             navigate(from, { replace: true });
@@ -40,12 +40,12 @@ const Login = () => {
             // Display error message to the user
         }
     };
-   
+
 
     return (
         <div>
             <Helmet>
-                <title>Motion Boss | Login </title>
+                <title>EJobsIT | Login </title>
             </Helmet>
             <div className="hero pt-12 pb-40 bg-base-200">
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -70,11 +70,11 @@ const Login = () => {
                         </div >
                         <div className="divider">OR</div>
                     </form>
-                   <GoogleSignin></GoogleSignin>
+                    <GoogleSignin></GoogleSignin>
                     <div className='text-center -mt-6'>
                         <p>New here? Please
                             <Link to='/signup'>
-                                <button  className="btn btn-link">Register</button>
+                                <button className="btn btn-link">Register</button>
                             </Link>
                         </p>
                     </div>

@@ -4,14 +4,14 @@ const Footer = () => {
         <div>
             <footer className="footer p-10 bg-[#2B3440] text-[#CDD3DA]  ">
                 <aside>
-                    <h3 className="text-4xl font-bold">Motion Boss</h3>
+                    <h3 className="text-4xl font-bold">EJobsIT</h3>
                     <p>Online IT Training Center<br /></p>
                     <div>
-                            <div className="flex items-center gap-4 px-4 py-2 rounded-md bg-slate-800">
-                                <span className="">< FaPhoneVolume /></span>
-                                <h2>+8801730481212 </h2>
-                            </div>
+                        <div className="flex items-center gap-4 px-4 py-2 rounded-md bg-slate-800">
+                            <span className="">< FaPhoneVolume /></span>
+                            <h2>+8801730481212 </h2>
                         </div>
+                    </div>
                 </aside>
                 <nav>
                     <header className="footer-title">Services</header>

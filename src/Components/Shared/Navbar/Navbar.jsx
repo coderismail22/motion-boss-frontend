@@ -1,5 +1,5 @@
 import { Link, NavLink, } from "react-router-dom";
-import logo from '../../../../public/img/Untitled-1.gif'
+import logo from '../../../../public/ejobsit-logo.svg'
 import useAuth from "../../../Hooks/useAuth";
 import { GoChevronDown } from "react-icons/go";
 import Swal from "sweetalert2";
